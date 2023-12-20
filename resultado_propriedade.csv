@@ -1,0 +1,5 @@
+ID_Propriedade,ID_Proprietario,ID_Anfitriao,Data_Reserva,Receita_Proprietario,Receita_Anfitriao
+1,1001,2001,2023-12-01,1710.0,190.0
+3,1001,2001,2023-12-10,552.0,48.0
+2,1002,2002,2023-12-05,616.0,84.0
+4,1003,2003,2023-12-15,765.0,135.0
