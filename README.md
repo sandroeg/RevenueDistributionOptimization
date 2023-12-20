@@ -37,15 +37,40 @@ ID_Propriedade,Data_Reserva,Receita,ID_Proprietario,ID_Anfitriao,Percentual_Comi
 3,2023-12-10,600,1001,2001,8
 4,2023-12-15,900,1003,2003,15
 1,2023-12-20,1400,1001,2001,10
-  </code>
+</code>
 </pre>
 
 ### System Architecture
 
+The system operates by extracting data from the 'dados.csv' file using the 'relatorio_distribuicao.py' application, generating an output file named 'resultado_distribuicao.csv.' This file details the distributed revenues by entity, namely, property owners or hosts, grouped by their respective IDs.
+<pre>
+<code>
+ID_entidade,Tipo_entidade,Receita_apurada
+1003,Proprietario,765.0
+1002,Proprietario,616.0
+1001,Proprietario,2262.0
+2002,Anfitriao,84.0
+2003,Anfitriao,135.0
+2001,Anfitriao,238.0
+</code>
+</pre>
+
+Simultaneously, the 'relatorio_propriedade.py' application is employed to generate the 'resultado_propriedade.csv' output file, organizing revenues by property. The resulting file follows this model:
+<pre>
+<code>
+ID_Propriedade,ID_Proprietario,ID_Anfitriao,Data_Reserva,Receita_Proprietario,Receita_Anfitriao
+1,1001,2001,2023-12-01,1710.0,190.0
+3,1001,2001,2023-12-10,552.0,48.0
+2,1002,2002,2023-12-05,616.0,84.0
+4,1003,2003,2023-12-15,765.0,135.0
+</code>
+</pre>
 
 ### API
+The Revenue Distribution API is designed to receive property IDs and return their revenue distribution by performing queries on the 'resultado_propriedade.csv' CSV file.
 
 ### Usage Instructions:
 - Clone this repository.
 - Run the Python code to demonstrate the functionalities.
+  
 For more details about the implementation, refer to the source code.
